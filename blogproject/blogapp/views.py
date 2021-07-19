@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Blog
+from .forms import BlogForm
 
 # Create your views here.
 def home(request):
@@ -13,7 +14,8 @@ def detail(request, id):
 
 # new.html을 띄워주는 함수
 def new(request): 
-    return render(request, 'new.html')
+    form = BlogForm()
+    return render(request, 'new.html', {'form':form})
 
  # 입력받은 내용을 데이터베이스에 넣어주는 함수
 def create(request):

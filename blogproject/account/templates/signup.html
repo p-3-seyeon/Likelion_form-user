@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block contents %}
+
+<h1>Sign Up</h1>
+
 <div class="container">
-    <form action="{% url 'create' %}" method="post">
+    <form action="{% url 'signup' %}" method="post">
         {% csrf_token %}
         <br>
         {{form.as_p}}
         <input class="btn-dark" type="submit" value="제출하기">
     </form>
 </div>
+
 {% endblock %}

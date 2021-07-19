@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+
+{% if user.is_authenticated %}
+    {{user.username}}
+{% endif %}
+
 {% block contents %}
+
 {% for blog in blogs.all %}
 <br>
 <div class="container">
